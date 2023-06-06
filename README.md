@@ -59,3 +59,9 @@ Score - 0.85
 
 ## Next Steps
 I'd like to adjust the parameters some more, try out different optimizers and loss functions. The biggest issue was that because each run takes so long (4-7 hours even on GPU), I always make multiple changes (new augmentations, add regularisation, change learning weight, etc.) per run, so hard to tell what exactly might be detrimental or helpful.
+
+## Demo(?)
+The training process takes way too long, but all the results (accuracies + losses for each epoch, graphs) should be on the birds23spr.ipynb. Here's the graphs from there:
+
+Val loss
+![Alt text](val_loss.JPG?raw=true "Optional Title")
