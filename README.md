@@ -4,6 +4,8 @@
 This project was just the default kaggle bird species classification one. Everything was done on kaggle, I just downloaded the code over to github to basically use the readme for the 'website'. I was thinking of just summarizing everything in the kaggle notebook itself and share that, but I'm not sure if its possible to share the notebook by link and note have it be visible to everyone, so github it is.
 
 ## What I Used (Pre-existing work)
+- Pytorch
+- Split-folders for new modified dataset (didn't use it in the end)
 - Predict method from the tutorial on cse 455 website to evaluate on test set and create the actual csv submission file
 - The get_bird_data (ImageFolder + DataLoader), though had to modify to split training into 80/20 sets
 
