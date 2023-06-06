@@ -10,7 +10,7 @@ This project was just the default kaggle bird species classification one. Everyt
 - The get_bird_data (ImageFolder + DataLoader), though had to modify to split training into 80/20 sets
 
 ## Problem Setup
-I first basically just used the example from the tutorial on the cse 455 website, transfer learning with birds. This was basically just me familiarizing myself with the pytorch syntax and using kaggle collab. Afterwards, I tried different models and techniques. I'm still kind of new to kaggle, and I wasn't able to find a way to run the model in the background without saving and making a new version (if it's even possible to not), so my notebook just has a lot of versions (22 - most failed to some some error). Here's an basic timeline of what I did and an overview of the versions that worked* with their respective scores:
+I first basically just used the example from the tutorial on the cse 455 website, transfer learning with birds. This was basically just me familiarizing myself with the pytorch syntax and using kaggle collab. Afterwards, I tried different models and techniques. I'm still kind of new to kaggle, and I wasn't able to find a way to run the model in the background without saving and making a new version (if it's even possible to not), so my notebook just has a lot of versions (23 - most failed to some some error). Here's an basic timeline of what I did and an overview of the versions that worked* with their respective scores:
 
 ## Try 1 - Resnet18 (tutorial)
 Basically just the "Transfer Learning to Birds" from website. I was trying to work out how the given dataset is formatted, what the other files (labels, names, sample) were and if they were relevant to training the model, etc.
@@ -56,3 +56,6 @@ Score - 0.832
 As I was typing this up, I realized that the pytorch random-split isn't stratified, so it wouldn't have equal proportions of the classes in the split datasets. This means some species might be over / under-represented. So I went back and used the modified dataset that I had created earlier instead (with code in the try2-keras-splitdataset). 
 
 Score - 0.85
+
+## Next Steps
+I'd like to adjust the parameters some more, try out different optimizers and loss functions. The biggest issue was that because each run takes so long (4-7 hours even on GPU), I always make multiple changes (new augmentations, add regularisation, change learning weight, etc.) per run, so hard to tell what exactly might be detrimental or helpful.
