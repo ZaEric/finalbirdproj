@@ -64,4 +64,4 @@ I'd like to adjust the parameters some more, try out different optimizers and lo
 The training process takes way too long, but all the results (accuracies + losses for each epoch, graphs) should be on the birds23spr.ipynb. Here's the graphs from there:
 
 Val loss
-![Alt text](val_loss.JPG?raw=true "Optional Title")
+![Alt text](images/val_loss.JPG?raw=true "Optional Title")
