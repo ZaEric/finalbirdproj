@@ -14,10 +14,12 @@ I first basically just used the example from the tutorial on the cse 455 website
 
 ## Try 1 - Resnet18 (tutorial)
 Basically just the "Transfer Learning to Birds" from website. I was trying to work out how the given dataset is formatted, what the other files (labels, names, sample) were and if they were relevant to training the model, etc.
+
 Score - 0.6365
 
 ## Try 2 - Efficientnetb0
 After looking around online about the various model architectures and how they performed on Imagenet, I decided to go with Efficientnet, freezing the earlier layers. I went with Efficientnetb0 which had the least parameters as a starting point. While this run succeeded, a mistake in my code ended up using the untrained model for the actual evaluation instead of the trained one, so I got a terrible score.
+
 Score - 0.1485
 
 ## Try 2.5 - Split dataset, new training method, brief attempt with tensorflow
