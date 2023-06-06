@@ -29,20 +29,25 @@ At this point, I decided to make a new notebook to try out tensorflow instead of
 
 ## Try 3 - Efficientnet but actually works
 While try 2.5 failed, the model still finished training and and I could see the accuracies in the log. It was pretty low, and I thought that I might've been underfitting the model, so I unfreezed the earlier layers and removed the dropout layer. I also increased the number of epochs to 20 (from 10), and this time the model performed much better.
+
 Score - 0.7995
 
 ## Try 4 - New Model, DataLoader Shenanigans
 I decided to try efficientnetv2-s in hopes of increasing accuracy. It's at this point that I realized using random_split on the dataset from ImageFolder meant I was basically splitting the dataset after the augmentations, which meant my valid set was being augmented too. I decided to use the modified dataset, but ran into a runtime error of trying to resize an unresizable storage. I thought something was wrong with the dataset, so went back to using the given one and just applied the transformations after the split using a wrapper class, but that failed too. It turned out that I tried to cut corners and just use the transform_test for my valid set to since it had no other transformations, but the resize there didnt create a 224x224 image for my valid set.
+
 Score - 0.806
 
 ## Try 5 - More epochs
 I switched epochs back to 10 earlier when trying efficientnetv2, increased to 20 again.
+
 Score - 0.8085
 
 ## Try 6 - Overfitting issues, tuning model
 Added more augmentations, including vertical flip, color jittering and rotations. I added back in the dropout layer, but this ended up decreasing performance.
+
 Score - 0.8
 
 ## Try 7 - Removing some augmentations, SGD optimizer
 I removed the random rotation augmentations, because it was leaving blank areas that I worried may impact training. I randomly clicked through some of the images in the set and noticed none were truly upsidedown (sometimes angled, but not upsidedown). So I lowered the probability of the vertical flip. I switched to an sgd optimizer instead of adam and set momentum to 0.9 to account for the dropout layer.
+
 Score - 0.832
